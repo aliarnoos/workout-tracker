@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <>
       <header>
-        <div className="container">
+        <div className="font-bold">
           <Link to={"/"}>
             <h1>Workout Tarcker</h1>
           </Link>
