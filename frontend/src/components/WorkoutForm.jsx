@@ -26,7 +26,6 @@ function WorkoutForm() {
     }
     if (response.ok) {
       setError(null);
-      console.log("new workout addded");
       setTitle("");
       setLoad("");
       setReps("");
