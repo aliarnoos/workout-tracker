@@ -1,2 +1,2 @@
 # workout-tracker
-Full-stack workout tracker app build with MERN stack 
+Full-stack workout tracker app build with MERN
