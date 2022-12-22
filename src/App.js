@@ -8,7 +8,7 @@ function App() {
     <div className=" font-sans">
       <BrowserRouter>
           <NavBar/>
-        <div className="p-16">
+        <div className="p-16 max-md:p-4">
           <Routes>
             <Route path='/'element={<Home/>}/>
           </Routes>

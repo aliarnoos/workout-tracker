@@ -17,7 +17,7 @@ function WorkoutDetails({ workout }) {
     }
   };
   return (
-    <div className="shadow-md p-4 col-span-2 bg-white rounded flex justify-between items-start">
+    <div className="shadow-md p-4 col-span-2 bg-white rounded flex justify-between items-start max-md:col-span-3 ">
       <div className="">
         <h4 className="text-xl font-black text-green-500 my-2">
           {workout.title}

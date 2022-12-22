@@ -38,7 +38,7 @@ function WorkoutForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col  row-start-1 row-end-4	col-start-3 col-end-4  p-6 items-start	"
+      className="flex flex-col  row-start-1 row-end-4	col-start-3 col-end-4  p-6 items-start max-md:col-span-3 	"
     >
       <h3 className="text-xl font-black  my-2">Add a New Workout: </h3>
       <label htmlFor="">Excersie Title:</label>
@@ -47,7 +47,7 @@ function WorkoutForm() {
         name="title"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="h-8 w-80 mb-6 mt-1 border-2 border-gray-300 rounded	focus:outline-none"
+        className="h-8 mb-6 mt-1 border-2 border-gray-300 rounded	focus:outline-none"
       />
 
       <label htmlFor="">Load (kg):</label>
@@ -56,7 +56,7 @@ function WorkoutForm() {
         name="load"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
-        className="h-8 w-80 mb-6 border-2 mt-1 border-gray-300 rounded	focus:outline-none"
+        className="h-8  mb-6 border-2 mt-1 border-gray-300 rounded	focus:outline-none"
       />
 
       <label htmlFor="">Reps:</label>
@@ -65,7 +65,7 @@ function WorkoutForm() {
         name="reps"
         onChange={(e) => setReps(e.target.value)}
         value={reps}
-        className="h-8 w-80 mb-6 border-2 mt-1 border-gray-300 rounded	focus:outline-none"
+        className="h-8 mb-6 border-2 mt-1 border-gray-300 rounded	focus:outline-none"
       />
       <button className="bg-green-500 p-2 text-white font-bold rounded">
         Add Workout

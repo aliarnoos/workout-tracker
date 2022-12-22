@@ -23,7 +23,7 @@ function Home() {
   }, [dispatch]);
 
   return (
-    <div className=" p-6 grid grid-cols-3 gap-6">
+    <div className=" p-6 grid grid-cols-3 gap-6 ">
       {workouts &&
         workouts.map((workout) => (
           <WorkoutDetails key={workout._id} workout={workout} />
