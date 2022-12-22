@@ -5,11 +5,10 @@ function WorkoutDetails({ workout }) {
   const { dispatch } = useWorkoutsContext();
   const handleClick = async () => {
     const response = await fetch(
-      "https://workout-tracker-app-ni9r.onrender.com/api/workouts" +
+      "https://workout-tracker-app-ni9r.onrender.com/api/workouts/" +
         workout._id,
       {
         method: "DELETE",
-        mode: "no-cors",
       }
     );
     const json = await response.json();

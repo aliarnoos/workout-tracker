@@ -8,10 +8,8 @@ function Home() {
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch(
-        "https://workout-tracker-app-ni9r.onrender.com/api/workouts",
-        { mode: "no-cors" }
+        "https://workout-tracker-app-ni9r.onrender.com/api/workouts"
       );
-      console.log(response);
       const json = await response.json();
 
       if (response.ok) {

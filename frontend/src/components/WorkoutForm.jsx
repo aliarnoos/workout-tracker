@@ -13,9 +13,8 @@ function WorkoutForm() {
 
     const workout = { title, load, reps };
     const response = await fetch(
-      "https://workout-tracker-app-ni9r.onrender.com/api/workouts",
+      "https://workout-tracker-app-ni9r.onrender.com/api/workouts/",
       {
-        mode: "no-cors",
         method: "POST",
         body: JSON.stringify(workout),
         headers: {
