@@ -7,11 +7,18 @@ function Home() {
   const { workouts, dispatch } = useWorkoutsContext();
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts");
+      const response = await fetch(
+        "https://workout-tracker-app-ni9r.onrender.com/api/workouts",
+        { mode: "no-cors" }
+      );
+      console.log(response);
       const json = await response.json();
 
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
+      }
+      if (!response.ok) {
+        console.log("nooooooooooo");
       }
     };
     fetchWorkouts();

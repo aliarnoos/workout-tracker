@@ -12,13 +12,17 @@ function WorkoutForm() {
     e.preventDefault();
 
     const workout = { title, load, reps };
-    const response = await fetch("/api/workouts", {
-      method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://workout-tracker-app-ni9r.onrender.com/api/workouts",
+      {
+        mode: "no-cors",
+        method: "POST",
+        body: JSON.stringify(workout),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

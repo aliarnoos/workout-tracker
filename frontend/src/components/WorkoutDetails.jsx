@@ -4,9 +4,14 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 function WorkoutDetails({ workout }) {
   const { dispatch } = useWorkoutsContext();
   const handleClick = async () => {
-    const response = await fetch("/api/workouts/" + workout._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://workout-tracker-app-ni9r.onrender.com/api/workouts" +
+        workout._id,
+      {
+        method: "DELETE",
+        mode: "no-cors",
+      }
+    );
     const json = await response.json();
     if (response.ok) {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
