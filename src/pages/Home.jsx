@@ -15,9 +15,6 @@ function Home() {
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
       }
-      if (!response.ok) {
-        console.log("nooooooooooo");
-      }
     };
     fetchWorkouts();
   }, [dispatch]);

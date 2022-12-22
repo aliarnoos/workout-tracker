@@ -10,7 +10,7 @@ function App() {
           <NavBar/>
         <div className="p-16 max-md:p-4">
           <Routes>
-            <Route path='/'element={<Home/>}/>
+            <Route path='/workout-tracker'element={<Home/>}/>
           </Routes>
         </div>
       </BrowserRouter>
