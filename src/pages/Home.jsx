@@ -2,13 +2,20 @@ import { useEffect } from "react";
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Home() {
   const { workouts, dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch(
-        "https://workout-tracker-app-ni9r.onrender.com/api/workouts"
+        "https://workout-tracker-app-ni9r.onrender.com/api/workouts",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
       );
       const json = await response.json();
 
@@ -16,8 +23,10 @@ function Home() {
         dispatch({ type: "SET_WORKOUTS", payload: json });
       }
     };
-    fetchWorkouts();
-  }, [dispatch]);
+    if (user) {
+      fetchWorkouts();
+    }
+  }, [dispatch, user]);
 
   return (
     <div className=" p-6 grid grid-cols-3 gap-6 ">

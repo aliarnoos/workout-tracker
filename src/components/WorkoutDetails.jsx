@@ -1,14 +1,22 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function WorkoutDetails({ workout }) {
+  const { user } = useAuthContext();
   const { dispatch } = useWorkoutsContext();
   const handleClick = async () => {
+    if (!user) {
+      return;
+    }
     const response = await fetch(
       "https://workout-tracker-app-ni9r.onrender.com/api/workouts/" +
         workout._id,
       {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
       }
     );
     const json = await response.json();
